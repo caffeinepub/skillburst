@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Vibrant energetic palette - light mode */
+        --background: 0.99 0.01 60;
+        --foreground: 0.25 0.02 260;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 260;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 260;
+        
+        /* Energetic orange primary */
+        --primary: 0.65 0.20 35;
+        --primary-foreground: 0.99 0.01 60;
+        
+        /* Vibrant teal secondary */
+        --secondary: 0.75 0.15 190;
+        --secondary-foreground: 0.99 0.01 60;
+        
+        --muted: 0.96 0.01 260;
+        --muted-foreground: 0.55 0.02 260;
+        
+        /* Playful pink accent */
+        --accent: 0.70 0.22 350;
+        --accent-foreground: 0.99 0.01 60;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0.01 60;
+        
+        --border: 0.90 0.01 260;
+        --input: 0.90 0.01 260;
+        --ring: 0.65 0.20 35;
+        
+        /* Vibrant chart colors */
+        --chart-1: 0.65 0.20 35;
+        --chart-2: 0.75 0.15 190;
+        --chart-3: 0.70 0.22 350;
+        --chart-4: 0.72 0.18 85;
+        --chart-5: 0.68 0.19 280;
+        
+        /* Success color - vibrant green */
+        --success: 0.72 0.18 145;
+        --success-foreground: 0.99 0.01 60;
+        
+        /* Warning color - sunny yellow */
+        --warning: 0.80 0.18 85;
+        --warning-foreground: 0.25 0.02 260;
+    }
+
+    .dark {
+        --background: 0.15 0.02 260;
+        --foreground: 0.95 0.01 60;
+        
+        --card: 0.20 0.02 260;
+        --card-foreground: 0.95 0.01 60;
+        
+        --popover: 0.18 0.02 260;
+        --popover-foreground: 0.95 0.01 60;
+        
+        --primary: 0.70 0.22 35;
+        --primary-foreground: 0.15 0.02 260;
+        
+        --secondary: 0.78 0.16 190;
+        --secondary-foreground: 0.15 0.02 260;
+        
+        --muted: 0.25 0.02 260;
+        --muted-foreground: 0.65 0.02 260;
+        
+        --accent: 0.75 0.24 350;
+        --accent-foreground: 0.15 0.02 260;
+        
+        --destructive: 0.60 0.24 25;
+        --destructive-foreground: 0.95 0.01 60;
+        
+        --border: 0.30 0.02 260;
+        --input: 0.30 0.02 260;
+        --ring: 0.70 0.22 35;
+        
+        --chart-1: 0.70 0.22 35;
+        --chart-2: 0.78 0.16 190;
+        --chart-3: 0.75 0.24 350;
+        --chart-4: 0.75 0.19 85;
+        --chart-5: 0.72 0.20 280;
+        
+        --success: 0.75 0.19 145;
+        --success-foreground: 0.15 0.02 260;
+        
+        --warning: 0.82 0.19 85;
+        --warning-foreground: 0.15 0.02 260;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+}
+
+@layer utilities {
+    .gradient-primary {
+        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--accent)) 100%);
+    }
+    
+    .gradient-secondary {
+        background: linear-gradient(135deg, oklch(var(--secondary)) 0%, oklch(var(--chart-5)) 100%);
+    }
+    
+    .gradient-success {
+        background: linear-gradient(135deg, oklch(var(--success)) 0%, oklch(var(--secondary)) 100%);
+    }
+    
+    .text-gradient {
+        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--accent)) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px oklch(var(--primary) / 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px oklch(var(--primary) / 0.6);
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-confetti {
+    animation: confetti-fall 3s ease-in-out forwards;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}

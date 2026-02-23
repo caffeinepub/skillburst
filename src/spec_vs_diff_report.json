@@ -1,0 +1,103 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T11:08:42.462Z",
+  "summary": "The implementation provides a comprehensive gamified micro-learning platform with most core features, including lesson catalog, interactive exercises, feedback system, gamification mechanics, and certificate generation. However, several requirements have incomplete or missing implementations, particularly around filtering capabilities, PDF downloads, progress charts, and specific animation requirements.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Users can filter lessons by category and difficulty",
+      "reason": "The LessonCatalog component is not shown in the diff. While backend supports filtering by category via getLessonsByCategory, there's no evidence of UI implementation for filtering by difficulty or the filter controls themselves.",
+      "evidence": []
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Clickable demonstrations interactive exercise type",
+      "reason": "Three exercise types are implemented (MultipleChoiceExercise, DragDropExercise, FillInBlankExercise), but 'clickable demonstrations' mentioned in the requirement description is not implemented.",
+      "evidence": [
+        "frontend/src/components/exercises/MultipleChoiceExercise.tsx",
+        "frontend/src/components/exercises/DragDropExercise.tsx",
+        "frontend/src/components/exercises/FillInBlankExercise.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Certificate can be downloaded as a PDF",
+      "reason": "While certificates can be viewed via unique URL (CertificateView component exists), there's no evidence of PDF download functionality in the diff.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Progress chart visualizes learning activity over the past 30 days",
+      "reason": "The ProfileStatistics component shows basic stats but no visual chart for learning activity over time is evident in the diff.",
+      "evidence": [
+        "frontend/src/components/ProfileStatistics.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Sonner toast notifications library integration",
+      "reason": "Toast notifications using 'sonner' library were not requested in the BuildRequest but are implemented throughout the application for user feedback.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Email field in user profile",
+      "reason": "The user profile includes an optional email field, but user authentication and profile management requirements did not specify collecting email addresses.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ]
+    },
+    {
+      "description": "Admin user management system with access control",
+      "reason": "Backend implements a full admin authorization system with MixinAuthorization and access control, but requirements only mention Internet Identity authentication for users, not an admin system.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.75,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BadgeCollection.tsx",
+    "frontend/src/components/BadgeUnlockModal.tsx",
+    "frontend/src/components/FeedbackDisplay.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/LessonCard.tsx",
+    "frontend/src/components/LevelUpModal.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/ProfileStatistics.tsx",
+    "frontend/src/components/SegmentSummary.tsx",
+    "frontend/src/components/StreakDisplay.tsx",
+    "frontend/src/components/XPDisplay.tsx",
+    "frontend/src/components/exercises/DragDropExercise.tsx",
+    "frontend/src/components/exercises/FillInBlankExercise.tsx",
+    "frontend/src/components/exercises/MultipleChoiceExercise.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CertificateVerification.tsx",
+    "frontend/src/pages/CertificateView.tsx",
+    "frontend/src/pages/CertificationTracks.tsx",
+    "frontend/src/pages/LessonCatalog.tsx",
+    "frontend/src/pages/LessonPlayer.tsx",
+    "frontend/src/pages/ProfilePage.tsx",
+    "frontend/src/utils/gamification.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

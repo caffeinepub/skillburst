@@ -1,0 +1,155 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-lesson-catalog-page-that-displays-bite-sized-interactive-lessons-organized-by-skill-categories-e-g-design-programming-business-creative-arts-each-lesson-card-should-show-the-title-estimated-completion-time-5-15-minutes-difficulty-level-and-progress-indicator",
+      "featureTitle": "Create a lesson catalog page that displays bite-sized interactive lessons organized by skill categories (e.g., Design, Programming, Business, Creative Arts). Each lesson card should show the title, estimated completion time (5-15 minutes), difficulty level, and progress indicator.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LessonCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-an-interactive-lesson-player-that-presents-content-in-small-digestible-chunks-with-interactive-elements-such-as-multiple-choice-questions-drag-and-drop-exercises-fill-in-the-blank-activities-and-clickable-demonstrations-track-user-progress-through-each-lesson-segment",
+      "featureTitle": "Implement an interactive lesson player that presents content in small, digestible chunks with interactive elements such as multiple-choice questions, drag-and-drop exercises, fill-in-the-blank activities, and clickable demonstrations. Track user progress through each lesson segment.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/exercises/DragDropExercise.tsx",
+        "frontend/src/components/exercises/FillInBlankExercise.tsx",
+        "frontend/src/components/exercises/MultipleChoiceExercise.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-immediate-feedback-system-that-validates-user-responses-to-interactive-exercises-in-real-time-showing-correct-incorrect-indicators-explanations-for-wrong-answers-and-encouragement-messages-display-a-summary-at-the-end-of-each-lesson-segment-showing-accuracy-and-key-takeaways",
+      "featureTitle": "Build an immediate feedback system that validates user responses to interactive exercises in real-time, showing correct/incorrect indicators, explanations for wrong answers, and encouragement messages. Display a summary at the end of each lesson segment showing accuracy and key takeaways.",
+      "files": [
+        "frontend/src/components/FeedbackDisplay.tsx",
+        "frontend/src/components/SegmentSummary.tsx",
+        "frontend/src/components/exercises/DragDropExercise.tsx",
+        "frontend/src/components/exercises/FillInBlankExercise.tsx",
+        "frontend/src/components/exercises/MultipleChoiceExercise.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-gamification-system-with-experience-points-xp-skill-levels-achievement-badges-and-daily-streaks-award-xp-for-completing-lessons-maintaining-learning-streaks-and-achieving-high-accuracy-scores-display-user-level-total-xp-and-badges-on-a-profile-dashboard",
+      "featureTitle": "Create a gamification system with experience points (XP), skill levels, achievement badges, and daily streaks. Award XP for completing lessons, maintaining learning streaks, and achieving high accuracy scores. Display user level, total XP, and badges on a profile dashboard.",
+      "files": [
+        "frontend/src/components/BadgeUnlockModal.tsx",
+        "frontend/src/components/LevelUpModal.tsx",
+        "frontend/src/components/StreakDisplay.tsx",
+        "frontend/src/components/XPDisplay.tsx",
+        "frontend/src/utils/gamification.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-certification-system-that-generates-verifiable-digital-certificates-upon-completing-a-skill-track-collection-of-related-lessons-certificates-should-display-the-user-s-name-skill-completed-completion-date-and-a-unique-verification-id-store-certificate-data-on-chain-for-authenticity",
+      "featureTitle": "Implement a certification system that generates verifiable digital certificates upon completing a skill track (collection of related lessons). Certificates should display the user's name, skill completed, completion date, and a unique verification ID. Store certificate data on-chain for authenticity.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-user-profile-page-showing-learning-statistics-including-total-lessons-completed-current-streak-total-xp-skill-levels-across-categories-earned-badges-and-obtained-certifications-include-visual-charts-for-learning-progress-over-time",
+      "featureTitle": "Design a user profile page showing learning statistics including total lessons completed, current streak, total XP, skill levels across categories, earned badges, and obtained certifications. Include visual charts for learning progress over time.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BadgeCollection.tsx",
+        "frontend/src/components/ProfileStatistics.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-establish-a-modern-energetic-visual-design-with-a-vibrant-color-palette-featuring-gradients-and-dynamic-elements-use-playful-illustrations-and-animations-to-make-learning-feel-engaging-and-rewarding-typography-should-be-clean-and-highly-readable-for-educational-content-implement-smooth-transitions-between-lesson-segments-and-celebratory-micro-interactions-for-achievements",
+      "featureTitle": "Establish a modern, energetic visual design with a vibrant color palette featuring gradients and dynamic elements. Use playful illustrations and animations to make learning feel engaging and rewarding. Typography should be clean and highly readable for educational content. Implement smooth transitions between lesson segments and celebratory micro-interactions for achievements.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
